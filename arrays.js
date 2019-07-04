@@ -1,23 +1,23 @@
-function isPrime (n)
-{
-    if (n<2)
-    return false;
-
-    /**
-     * An integer is prime if it is not divisible by any prime less than or equal to its square root
-     **/
-
-for (var j=2;j<= n; j++){ 
-      
-    if (j%n==0){
-        var arry[]=j;
-     for (var i =0; n <100)     
+function getPrimeNumber(num){
+   let primeNumbers = [];
+   
+   if(num > 2)
+    primeNumbers = [2];
+    
+   for(let a = 3; a <= num; a += 2){
+    let isPrime = true;
+       for(let b = 2; b <= Math.sqrt(a); b++){
+        if(a%b == 0){
+            isPrime = false;
+            break;
         }
-    }
-
-    if (flag== true;){
-                print(i);
-    }
+      }
+      if(isPrime)
+        primeNumbers.push(a);
+   }
+   
+   return primeNumbers;
 }
 
-console.log(n<2==100)
+console.log(getPrimeNumber(100));
+
